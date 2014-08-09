@@ -18,7 +18,6 @@ public class PauseCommand : Command {
 	}
 	
 	public override void execute(NodeScript script){
-		this.node = node;
 		this.script = script;
 		Invoke("endDelay", waitTime);
 	}

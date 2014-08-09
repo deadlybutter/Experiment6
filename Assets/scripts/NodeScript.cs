@@ -13,16 +13,16 @@ public class NodeScript {
 		this.commands = commands;
 	}
 
-	public void execute(Node node){
-		commands[0].execute(node, this);
+	public void execute(){
+		commands[0].execute(this);
 	}
 
-	public void next(Node node){
+	public void next(){
 		index++;
 		if(index >= commands.Count){
 			return;
 		}
-		commands[index].execute(node, this);
+		commands[index].execute(this);
 	}
 
 }

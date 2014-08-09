@@ -31,7 +31,7 @@ public class Node : MonoBehaviour {
 	public void checkScripts(TRIGGERS trigger){
 		foreach(NodeScript ns in scripts){
 			if(ns.trigger.Equals(trigger)){
-				ns.execute(this);
+				ns.execute();
 			}
 		}
 	}
