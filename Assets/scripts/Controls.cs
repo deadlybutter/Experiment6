@@ -28,6 +28,7 @@ public class Controls : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
+
 		//Movement
 		if(Input.GetKey(KeyCode.W)){
 			rigidbody.AddForce(transform.forward * speed);
