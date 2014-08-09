@@ -1,15 +1,36 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class EntityNode : Node {
 
+	protected override void Awake(){
+		base.Awake();
+		generate();
+	}
+
 	// Use this for initialization
-	protected override Start () {
+	protected override void Start () {
 		base.Start();
 	}
 	
 	// Update is called once per frame
-	protected override Update () {
+	protected override void Update () {
 		base.Update();
+	}
+
+	public override void generate (){
+		List<Command> commands = new List<Command>();
+		commands.Add(new VelocityCommand());
+		NodeScript nodeScript = new NodeScript(TRIGGERS.START, commands);
+		AddScript(nodeScript);
+	}
+
+	public override float getFitness(){
+		return 1;
+	}
+
+	public override Node makeChild (Node parentB){
+		throw new System.NotImplementedException ();
 	}
 }
