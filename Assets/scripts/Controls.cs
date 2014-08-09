@@ -43,9 +43,9 @@ public class Controls : MonoBehaviour {
 		}
 
 		//Jump
-		if(Input.GetKey(KeyCode.Space)){
+		if(Input.GetKeyDown(KeyCode.Space)){
 			if(isGrounded()){
-				rigidbody.AddForce(transform.up * jumpForce);
+				rigidbody.AddForce(transform.up * jumpForce * rigidbody.mass, ForceMode.Impulse);
 			}
 		}
 	}
