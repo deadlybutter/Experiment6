@@ -1,23 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class VelocityCommand : Command {
-
+public class JumpCommand : Command {
+	
 	public const float multiplier = 300;
 	public Vector3 velocity;
-
-	public VelocityCommand() : base("VELOCITY") {
+	
+	public JumpCommand() : base("JUMP") {
 
 	}
-
+	
 	public override void generate(){
-		velocity = new Vector3(Random.Range(-multiplier * rigidbody.mass, multiplier * rigidbody.mass), 0, Random.Range(-multiplier * rigidbody.mass, multiplier * rigidbody.mass));
+		velocity = new Vector3(0, Random.Range(rigidbody.mass * multiplier, (rigidbody.mass * multiplier) * 2), 0);
 	}
-
+	
 	public override void execute(NodeScript script){
 		generate();
 		rigidbody.AddForce(velocity);
 		script.next();
 	}
-
+	
 }

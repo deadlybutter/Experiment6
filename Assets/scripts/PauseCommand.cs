@@ -9,15 +9,15 @@ public class PauseCommand : Command {
 	private NodeScript script;
 
 	public PauseCommand() : base("PAUSE") {
-		generate();
+
 	}
-	
+
 	public override void generate(){
 		waitTime = Random.Range(1, range);
-		Debug.Log(waitTime);
 	}
 	
 	public override void execute(NodeScript script){
+		generate();
 		this.script = script;
 		Invoke("endDelay", waitTime);
 	}
