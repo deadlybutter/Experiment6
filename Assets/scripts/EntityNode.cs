@@ -21,9 +21,9 @@ public class EntityNode : Node {
 
 	public override void generate (){
 		List<Command> commands = new List<Command>();
-		//commands.Add((Command) gameObject.AddComponent<PauseCommand>());
+		commands.Add((Command) gameObject.AddComponent<WalkCommand>());
 		commands.Add((Command) gameObject.AddComponent<JumpCommand>());
-		commands.Add((Command) gameObject.AddComponent<VelocityCommand>());
+		//commands.Add((Command) gameObject.AddComponent<VelocityCommand>());
 		NodeScript nodeScript = new NodeScript(TRIGGERS.START, commands);
 		AddScript(nodeScript);
 	}

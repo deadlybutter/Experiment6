@@ -9,6 +9,10 @@ public class Command : MonoBehaviour {
 		this.KEY = key;
 	}
 
+	protected virtual void FixedUpdate(){
+
+	}
+
 	public virtual void generate(){
 
 	}

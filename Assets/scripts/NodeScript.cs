@@ -6,7 +6,7 @@ public class NodeScript {
 
 	public Node.TRIGGERS trigger;
 	public List<Command> commands;
-	public int index = 0;
+	public int index;
 
 	public NodeScript(Node.TRIGGERS trigger, List<Command> commands){
 		this.trigger = trigger;
@@ -14,7 +14,8 @@ public class NodeScript {
 	}
 
 	public void execute(){
-		commands[0].execute(this);
+		index = 0;
+		commands[index].execute(this);
 	}
 
 	public void next(){

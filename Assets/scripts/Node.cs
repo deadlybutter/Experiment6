@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Node : MonoBehaviour {
 
 	public enum TRIGGERS {
-		START, COLLIDE, UPDATE
+		START, COLLIDE, UPDATE, LOS, LOOKAT, INTERACT
 	};
 
 	public List<NodeScript> scripts;
