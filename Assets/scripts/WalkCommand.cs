@@ -24,7 +24,6 @@ public class WalkCommand : Command {
 			return;
 		}
 		Vector3 velocity = new Vector3(Random.Range(Random.Range(-multiplied, -doubleMultiplied), Random.Range(multiplied, doubleMultiplied)), 0, Random.Range(Random.Range(-multiplied, -doubleMultiplied), Random.Range(multiplied, doubleMultiplied)));
-		Debug.Log(velocity);
 		rigidbody.AddForce(velocity);
 	}
 	
